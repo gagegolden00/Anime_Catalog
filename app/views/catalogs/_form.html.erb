@@ -1,11 +1,17 @@
-<h1>New Title</h1>
+<% if @catalog.errors.any? %>
+  <h2>The following errors </h2>
+  <ul>
+    <% @catalog.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
 
-
-<%= form_with model: @title, url: catalogs_path, local: true do |form| %>
+<%= form_with model: @catalog, url: catalogs_path, local: true do |form| %>
   <div class="field">
     <%= form.label :title %><br>
     <%= form.text_field :title %>
   </div>
-
-  <%= form.submit "Create Catalog" %>
+  <%= form.submit %>
 <% end %>
+

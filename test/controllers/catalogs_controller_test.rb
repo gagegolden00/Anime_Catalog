@@ -17,7 +17,7 @@ class CatalogsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create catalog" do
     assert_difference("Catalog.count") do
-      post catalogs_url, params: { catalog: { title: @catalog.title } }
+      post catalogs_url, params: { catalog: { catalog: @catalog.title } }
     end
 
     assert_redirected_to catalog_url(Catalog.last)
@@ -34,7 +34,7 @@ class CatalogsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update catalog" do
-    patch catalog_url(@catalog), params: { catalog: { title: @catalog.title } }
+    patch catalog_url(@catalog), params: { catalog: { catalog: @catalog.title } }
     assert_redirected_to catalog_url(@catalog)
   end
 
