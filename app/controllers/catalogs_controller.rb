@@ -1,7 +1,12 @@
 class CatalogsController < ApplicationController
 
   def show
-    @title = Catalog.new()
+    @title = Catalog.find(params[:id])
+  end
+  
+  def index
+    @titles = Catalog.all()
+  
   end
 
   private

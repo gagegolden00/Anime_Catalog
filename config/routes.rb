@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
-  ### PAGES CONTOLLERS
+  ### PAGES ROUTES
   root "pages#home"
   get 'about', to: "pages#about"
+  
+  ### CATALOGS ROUTES
+  resources :catalogs
+  
+  
+  
+  
+  
 end

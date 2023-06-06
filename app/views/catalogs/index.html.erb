@@ -1,0 +1,6 @@
+<h1>INDEX PAGE</h1>
+
+
+<% @titles.each do |title| %>
+  <%= link_to "#{title.title}", catalog_path(title)%><br><br>
+<% end %>
