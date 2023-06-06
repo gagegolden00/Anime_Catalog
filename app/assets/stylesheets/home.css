@@ -1,0 +1,38 @@
+body {
+    background-color: #333;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+}
+.anime-list {
+    list-style: none;
+    padding: 0;
+}
+.anime-list li {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #222;
+}
+.anime-list li h2 {
+    color: #fff;
+    font-size: 24px;
+    margin-top: 0;
+}
+.anime-list li p {
+    color: #ccc;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.anime-list li p.genre {
+    color: #fff;
+}

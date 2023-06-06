@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <%= stylesheet_link_tag 'home.css' %>
+  <title>Anime Catalog</title>
+  <%= link_to 'Catalog Index', to: '/catalogs' %>
+</head>
+<body>
+<div class="container">
+  <h1>Anime Catalog</h1>
+  <ul class="anime-list">
+    <!-- This is not a correct iteration over the nested array -->
+    <% @random_titles.each do |nested_array| %>
+      <% nested_array.each do |title| %>
+        <li>
+          <h2><%= title %></h2>
+          <p><%= title %></p>
+          <p class="genre"><%= title %></p>
+        </li>
+      <% end  %>
+    <% end %>
+
+  </ul>
+</div>
+<div>
+
+
+</div>
+</body>
+</html>
