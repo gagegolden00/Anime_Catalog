@@ -12,7 +12,7 @@
         <% catalog = Catalog.find_by(title: title_of) %>
         <li>
           <h2><%= link_to "#{title_of}", catalog_path(catalog)%></h2>
-          <p class="genre"><%= "here is the genre" %></p>
+          <p class="genre"><%= @genre %></p>
           <p class="episodes"><%= "here are the episodes" %></p>
         </li>
       <% end  %>
