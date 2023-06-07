@@ -1,6 +1,6 @@
 
 class CatalogsController < ApplicationController
-  before_action :set_title, only: [:show, :edit, :destroy]
+  before_action :set_title, only: [:show, :edit, :destroy, :update]
   
   def show
   end
@@ -29,6 +29,13 @@ class CatalogsController < ApplicationController
   end
   
   def update
+    if @catalog.update(catalog_params)
+      redirect_to @catalog
+      flash[:notice] = "Update Successful!"
+    else
+      flash[:notice] = "Update Failed =( "
+      render 'edit'
+    end
   end
   
   def destroy
@@ -43,6 +50,6 @@ class CatalogsController < ApplicationController
   end
   
   def catalog_params
-    params.require(:catalog).permit(:title)
+    params.require(:catalog).permit(:title, :genre, :episodes)
   end
 end

@@ -5,7 +5,7 @@
 
   <%= link_to "Edit", edit_catalog_path(title), class: 'hover-link' %>
   <%= button_to "Destroy", catalog_path(title), method: :delete,
-                data: {turbo_confirm: "Are You Sure you want to delete #{title}?"} %>
+                data: {turbo_confirm: "Are You Sure you want to delete #{title.title}?"} %>
   <br><br>
 <% end %>
 

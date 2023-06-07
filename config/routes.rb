@@ -7,8 +7,7 @@ Rails.application.routes.draw do
   ### CATALOGS ROUTES
   resources :catalogs
   
-  
-  
-  
+  ### USERs ROUTES
+  resources :users
   
 end

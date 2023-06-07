@@ -8,10 +8,16 @@
   </ul>
 <% end %>
 
-<%= form_with model: @catalog, url: catalogs_path, local: true do |form| %>
+<%= form_with model: @catalog, local: true do |form| %>
   <div class="field">
     <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <%= form.text_field :title %><br>
+
+    <%= form.label :genre %><br>
+    <%= form.text_field :genre %><br>
+
+    <%= form.label :episodes %><br>
+    <%= form.text_field :episodes %><br>
   </div>
   <%= form.submit %>
 <% end %>
