@@ -8,12 +8,11 @@ Rails.application.routes.draw do
   resources :catalogs
   
   ### USERs ROUTES
-  resources :users, only: [:new, :create, :edit, :update, :show, :destroy]
+  resources :users, only: [:new, :create, :show]
   
   ### Session routes for user sessions
-  get '/login', to: 'sessions#login'
+  get '/login', to: 'sessions#login', as: :login
   post '/login', to: 'sessions#create'
-  get '/logout', to: 'sessions#destroy'
-  post '/logout', to: 'sessions#desroy'
+  delete '/logout', to: 'sessions#destroy', as: :logout
   
 end

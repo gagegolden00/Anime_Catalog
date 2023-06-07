@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  
+  before_action :set_user
   def home
     set_random_titles
     set_genre
@@ -20,5 +20,9 @@ class PagesController < ApplicationController
     @converting_back_to_obj.each do |title|
       @genre = title.genre
       end
+  end
+  
+  def set_user
+    @user = User.find(session[:user_id]) if session[:user_id]
   end
 end

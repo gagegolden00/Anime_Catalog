@@ -1,8 +1,8 @@
 class User < ApplicationRecord
-  #bcrypt security
   has_secure_password
+  validates :username, presence: true,
+            uniqueness: {case_sensitive: false},
+            length: {minimum: 3, maximum: 25}
   
-  validates :username,uniqueness: true, presence: true, length: {minimum: 10, maximum: 50}
-  validates :password, presence: true, length: {minimum: 12}
-
 end
+

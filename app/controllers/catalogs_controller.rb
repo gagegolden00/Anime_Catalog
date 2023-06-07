@@ -1,6 +1,7 @@
 
 class CatalogsController < ApplicationController
   before_action :set_title, only: [:show, :edit, :destroy, :update]
+  before_action :set_user
   
   def show
   end
@@ -51,5 +52,9 @@ class CatalogsController < ApplicationController
   
   def catalog_params
     params.require(:catalog).permit(:title, :genre, :episodes)
+  end
+  
+  def set_user
+    @user = User.find(session[:user_id]) if session[:user_id]
   end
 end
