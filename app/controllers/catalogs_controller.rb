@@ -1,7 +1,7 @@
 
 class CatalogsController < ApplicationController
   before_action :set_title, only: [:show, :edit, :destroy, :update]
-  before_action :set_user
+  before_action :set_user, :set_creator
   
   def show
   end
@@ -57,4 +57,8 @@ class CatalogsController < ApplicationController
   def set_user
     @user = User.find(session[:user_id]) if session[:user_id]
   end
+  def set_creator
+    @creator = @catalog.user.username
+  end
+  
 end
