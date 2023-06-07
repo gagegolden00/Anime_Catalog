@@ -24,19 +24,19 @@ class UsersController < ApplicationController
       redirect_to '/users/new'
     end
   end
-
-
-
   
-  # def edit
-  # @user = User.find(params[:id])
-  #end
-  #def update
-  #  @user = User.find(params[:id])
-  #  if @user.update(whitelist_params)
-  #    redirect_to edit_user_path, notice: "update successful"
-  #  end
-  #end
+  def edit
+   @user = User.find(params[:id])
+  end
+  
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to user_path(@user), notice: "Update successful"
+    else
+      redirect_to edit_user_path(@user), notice: "Error editing"
+    end
+  end
 
   private
   

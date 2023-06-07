@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :catalogs
   
   ### USERs ROUTES
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:new, :create, :show, :edit, :update]
   
   ### Session routes for user sessions
   get '/login', to: 'sessions#login', as: :login
