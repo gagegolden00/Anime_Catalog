@@ -5,3 +5,31 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
+some_seeds_to_plant = [
+  
+  { title: "TSUKIMICHI Moonlit Fantasy" },
+  { title: "Black Clover"},
+  { title: "The World's Finest Assassin gets Reincarnated as an Aristocrat"},
+  { title: "Demon Slayer"},
+  { title: "Dance in the Vampire Bund"},
+  { title: "High School DxD"},
+  { title: "The Sacred Blacksmith"},
+  { title: "Nobless Awakening"},
+  { title: "Tower of God"},
+  { title: "The Rising of the Shield Hero"},
+  { title: "Goblin Slayer"},
+  { title: "Stiens Gate"},
+  { title: "The Dawn of the Witch"},
+  { title: "Heaven Official's Blessing"},
+  { title: "The Promised Neverland"},
+  { title: "Jujutsu Kaisen"},
+  { title: "The Misfit of Demon King Academy"},
+  { title: "Parasyte the Maxim"},
+  { title: "Tokyo Ghoul"},
+  { title: "Attack on Titan"},
+  { title: "Deathnote"},
+  { title: "Norogami"},
+  
+]
