@@ -6,7 +6,8 @@ class CatalogsController < ApplicationController
   end
   
   def index
-    @catalogs= Catalog.all
+    @pagy, @catalogs= pagy(Catalog.all)
+    
   end
   
   def new

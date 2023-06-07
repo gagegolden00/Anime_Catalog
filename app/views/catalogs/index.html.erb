@@ -1,8 +1,9 @@
 <h1>INDEX PAGE</h1>
-
 <% @catalogs.each do |title| %>
   <%= link_to "#{title.title}", catalog_path(title) %>
   <%= link_to "Edit", edit_catalog_path(title) %>
   <%= button_to "Destroy", catalog_path(title), method: :delete, data: {turbo_confirm: "Are You Sure?"} %> <br> <br>
 <% end %>
+<%= pagy_nav(@pagy).html_safe %>
+
 
