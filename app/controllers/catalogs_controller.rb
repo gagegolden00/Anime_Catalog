@@ -19,17 +19,15 @@ class CatalogsController < ApplicationController
       redirect_to @catalog
       flash[:notice] = "Save Successful!"
     else
-      
       flash[:notice] = "Save Failed =( "
       redirect_to new_catalog_path
     end
   end
   
   def edit
-  
   end
-  def update
   
+  def update
   end
   
   def destroy

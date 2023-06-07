@@ -1,6 +1,5 @@
 <h1>INDEX PAGE</h1>
 
-
 <% @catalogs.each do |title| %>
   <%= link_to "#{title.title}", catalog_path(title) %>
   <%= link_to "Edit", edit_catalog_path(title) %>

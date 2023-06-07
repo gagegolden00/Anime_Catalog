@@ -73,3 +73,6 @@ end
 
 # debugger
 gem 'pry'
+
+# Pagination
+gem 'pagy', '~> 6.0', '>= 6.0.4'
