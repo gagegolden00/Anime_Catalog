@@ -76,3 +76,6 @@ gem 'pry'
 
 # Pagination
 gem 'pagy', '~> 6.0', '>= 6.0.4'
+
+# Security Gems
+gem 'bcrypt', '~> 3.1', '>= 3.1.18'
