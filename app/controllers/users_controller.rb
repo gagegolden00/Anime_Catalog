@@ -16,13 +16,16 @@ class UsersController < ApplicationController
         session[:user_id] = @user.id
         redirect_to root_path
       else
-        render 'new'
+        flash[:notice] = 'problem signing up'
+        redirect_to '/users/new'
       end
     else
-      flash.now[:notice] = "Passwords don't match!"
-      redirect_to new_user_url
+      flash[:notice] = "passwords dont match"
+      redirect_to '/users/new'
     end
   end
+
+
 
   
   # def edit
