@@ -31,5 +31,16 @@ some_seeds_to_plant = [
   { title: "Attack on Titan"},
   { title: "Deathnote"},
   { title: "Norogami"},
+  { title: "The Ancient Magus' Bride"},
+  { title: "The Testament of Sister New Devil"},
+  { title: "Hundred"},
+  { title: "Seven Mortal Sins"},
+  { title: "Dragonaut -THE RESONANCE-"},
+  { title: "Basilisk"},
+  { title: "KamiKatsu: Working for God in a Godless World"},
+  { title: "How Not to Summon a Demon Lord"},
+  { title: "GOBLIN SLAYER"},
+  { title: "Sword Art Online"},
+  { title: "VINLAND SAGA"},
   
 ]
