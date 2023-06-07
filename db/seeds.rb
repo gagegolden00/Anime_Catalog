@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-
+Catalog.destroy_all
 some_seeds_to_plant = [
   
   { title: "TSUKIMICHI Moonlit Fantasy" },
@@ -42,5 +42,8 @@ some_seeds_to_plant = [
   { title: "GOBLIN SLAYER"},
   { title: "Sword Art Online"},
   { title: "VINLAND SAGA"},
+  { title: "Dragon Ball"}
   
 ]
+
+Catalog.create(some_seeds_to_plant)
