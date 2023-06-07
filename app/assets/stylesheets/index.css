@@ -1,0 +1,11 @@
+/* Index links */
+.hover-link {
+    color: white;
+}
+.hover-link:hover {
+    color: red;
+}
+/* Pagy link */
+.pagy-nav.pagination .page a.pagy-class {
+    color: yellow;
+}
