@@ -1,29 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <%= stylesheet_link_tag 'home.css' %>
-  <title>Anime Catalog</title>
+<title>Anime Catalog</title>
 </head>
 <body>
 <div class="container">
   <h1>Anime Catalog</h1>
   <ul class="anime-list">
-    <!-- This is not a correct iteration over the nested array -->
+    <!-- In this code, we find the catalog object using the title attribute by using
+    Catalog.find_by(title: title_of). Then, we pass the catalog object as the parameter
+    to catalog_path in the link_to helper.-->
     <% @random_titles.each do |nested_array| %>
-      <% nested_array.each do |title| %>
+      <% nested_array.each do |title_of| %>
+        <% catalog = Catalog.find_by(title: title_of) %>
         <li>
-          <h2><%= title %></h2>
-          <p><%= title %></p>
-          <p class="genre"><%= title %></p>
+          <h2><%= link_to "#{title_of}", catalog_path(catalog)%></h2>
+          <p class="genre"><%= "here is the genre" %></p>
+          <p class="episodes"><%= "here are the episodes" %></p>
         </li>
       <% end  %>
     <% end %>
-
   </ul>
 </div>
 <div>
-
-
 </div>
 </body>
 </html>
