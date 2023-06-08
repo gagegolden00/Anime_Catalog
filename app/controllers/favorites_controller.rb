@@ -3,9 +3,9 @@ class FavoritesController < ActionController
   def create
     @user = User.find(params[:user_id])
     @anime = Anime.find(params[:id])
-    @favorites = Favorites.new(user: @user, anime: @anime)
+    @favorite = Favorite.new(user: @user, anime: @anime)
     
-    if @favorites.save
+    if @favorite.save
       flash[:notice] = "Added to favorites"
       # redirect maybe?
     else
