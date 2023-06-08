@@ -3,6 +3,10 @@
 
 <div>
   <h2>Favorites</h2>
-  <% %>>
+  <% @user.favorites.each do |favorite| %>
+    <ul>
+      <li><%= favorite.anime.title %></li>
+    </ul>
+  <% end %>
 
 </div>

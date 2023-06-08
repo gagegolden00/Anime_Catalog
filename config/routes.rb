@@ -15,4 +15,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy', as: :logout
   
+  ### FAVORITES ROUTES
+  resources :favorites, only: [:new, :create, :destroy]
+  
 end

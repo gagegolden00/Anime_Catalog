@@ -1,16 +1,19 @@
 <h1>INDIVIDUAL TITLE's DYNAMIC SHOW</h1>
 
 <div class="container">
-  <h1><%= @catalog.title %></h1>
+  <h1><%= @anime.title %></h1>
   <h3>
-    <% if @catalog.user == current_user %>
-      <%= link_to "EDIT #{@catalog.title}", edit_anime_path(@catalog) %>
+    <% if @anime.user == current_user %>
+      <%= link_to "EDIT #{@anime.title}", edit_anime_path(@anime) %>
     <%end %>
+    <% if logged_in? %>
+      <%= button_to "Add to Favorites", favorites_path(anime_id: @anime.id, user_id: @user.id), method: :post %>
+    <% end %>
   </h3>
   <ul class="anime-list">
-    <li>Genre: <%= @catalog.genre %> <br><br>
-      Episodes: <%= @catalog.episodes %><br><br>
-      Added by: <%=  @catalog.user.username %></li>
+    <li>Genre: <%= @anime.genre %> <br><br>
+      Episodes: <%= @anime.episodes %><br><br>
+      Added by: <%=  @anime.user.username %></li>
   </ul>
 </div>
 

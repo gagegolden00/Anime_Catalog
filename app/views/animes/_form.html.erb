@@ -1,14 +1,14 @@
 
-<% if @catalog.errors.any? %>
+<% if @anime.errors.any? %>
   <h2>The following errors </h2>
   <ul>
-    <% @catalog.errors.full_messages.each do |msg| %>
+    <% @anime.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
   </ul>
 <% end %>
 
-<%= form_with model: @catalog, local: true do |form| %>
+<%= form_with model: @anime, local: true do |form| %>
   <div class="field">
     <%= form.label :title %><br>
     <%= form.text_field :title %><br>

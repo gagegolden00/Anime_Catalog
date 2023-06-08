@@ -7,19 +7,19 @@ class AnimesController < ApplicationController
   end
   
   def index
-    @pagy, @catalogs = pagy(Anime.all)
+    @pagy, @animes = pagy(Anime.all)
     
   end
   
   def new
-    @catalog = Anime.new
+    @anime = Anime.new
   end
   
   def create
-    @catalog = Anime.new(anime_params)
-    @catalog.user = @user
-    if @catalog.save
-      redirect_to @catalog
+    @anime = Anime.new(anime_params)
+    @anime.user = @user
+    if @anime.save
+      redirect_to @anime
       flash[:notice] = "Save Successful!"
     else
       flash[:notice] = "Save Failed =( "
@@ -31,8 +31,8 @@ class AnimesController < ApplicationController
   end
   
   def update
-    if @catalog.update(anime_params)
-      redirect_to @catalog
+    if @anime.update(anime_params)
+      redirect_to @anime
       flash[:notice] = "Update Successful!"
     else
       flash[:notice] = "Update Failed =( "
@@ -41,18 +41,18 @@ class AnimesController < ApplicationController
   end
   
   def destroy
-    @catalog.destroy
+    @anime.destroy
     redirect_to animes_path
   end
   
   private
   
   def set_title
-    @catalog = Anime.find(params[:id])
+    @anime = Anime.find(params[:id])
   end
   
   def anime_params
-    params.require(:catalog).permit(:title, :genre, :episodes, :user_id)
+    params.require(:anime).permit(:title, :genre, :episodes, :user_id)
   end
   
   def set_user
