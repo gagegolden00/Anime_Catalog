@@ -16,7 +16,7 @@ class AnimesController < ApplicationController
   end
   
   def create
-    @catalog = Anime.new(catalog_params)
+    @catalog = Anime.new(anime_params)
     @catalog.user = @user
     if @catalog.save
       redirect_to @catalog
@@ -31,7 +31,7 @@ class AnimesController < ApplicationController
   end
   
   def update
-    if @catalog.update(catalog_params)
+    if @catalog.update(anime_params)
       redirect_to @catalog
       flash[:notice] = "Update Successful!"
     else
@@ -51,7 +51,7 @@ class AnimesController < ApplicationController
     @catalog = Anime.find(params[:id])
   end
   
-  def catalog_params
+  def anime_params
     params.require(:catalog).permit(:title, :genre, :episodes, :user_id)
   end
   
