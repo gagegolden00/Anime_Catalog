@@ -8,18 +8,6 @@
     <%= stylesheet_link_tag "application.css", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <%= render 'shared/links' %>
-
-    <!-- Dynamic link if / if not logged in -->
-    <% if logged_in? %>
-      <h2>Logged in as <%= @user.username %></h2>
-      <%= link_to 'Sign Out', logout_url, data: { turbo_method: :delete }, class: 'hover-link' %>
-      <%= link_to 'Edit Your Profile', edit_user_path(current_user), class: 'hover-link' %>
-      <%= link_to "NEW", new_catalog_path, class: 'hover-link'%>
-    <% else %>
-      <%= link_to "SIGN UP", new_user_path, class: 'hover-link'%>
-      <%= link_to "LOGIN", login_path, class: 'hover-link'%>
-    <% end %>
-
   <h1><%= flash.now[:notice] %></h1>
   </head>
 

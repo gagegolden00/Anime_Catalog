@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
+  before_action :find_user, only: [:edit, :update, :show]
   
   def show
-    @user = User.find(params[:id])
   end
  
   def new
@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     if @user.password == @user.password_confirmation
       if @user.save
         flash[:notice] = "You have successfully signed up, #{@user.username}!"
+        # creates the session once a user has signed up
         session[:user_id] = @user.id
         redirect_to root_path
       else
@@ -26,11 +27,9 @@ class UsersController < ApplicationController
   end
   
   def edit
-   @user = User.find(params[:id])
   end
   
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to user_path(@user), notice: "Update successful"
     else
@@ -42,6 +41,10 @@ class UsersController < ApplicationController
   
   def user_params
     params.require(:user).permit(:username, :password, :password_confirmation)
+  end
+  
+  def find_user
+    @user = User.find(params[:id])
   end
   
 end

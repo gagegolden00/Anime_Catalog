@@ -9,11 +9,11 @@
 ### CREATE THE USERS
 User.destroy_all
 some_user_seeds = [
-  {username: "user1", password_digest: "password"},
-  {username: "user2", password_digest: "password"},
-  {username: "user3", password_digest: "password"},
-  {username: "user4", password_digest: "password"},
-  {username: "user5", password_digest: "password"}
+  {id: 1, username: "user1", password_digest: "password"},
+  {id: 2, username: "user2", password_digest: "password"},
+  {id: 3, username: "user3", password_digest: "password"},
+  {id: 4, username: "user4", password_digest: "password"},
+  {id: 5, username: "user5", password_digest: "password"}
 ]
 User.create(some_user_seeds)
 
@@ -55,6 +55,7 @@ some_data_seeds = [
   { title: "GOBLIN SLAYER", genre: "genre", episodes: 1, user_id: 3 },
   { title: "Sword Art Online", genre: "genre", episodes: 1, user_id: 3 },
   { title: "VINLAND SAGA", genre: "genre", episodes: 1, user_id: 3 },
-  { title: "Dragon Ball", genre: "genre", episodes: 1, user_id: 3 }
+  { title: "Dragon Ball", genre: "genre", episodes: 1, user_id: 3 },
+  { title: "Seven Deadly Sins", genre: "genre", episodes: 1, user_id: 3 }
 ]
 Catalog.create(some_data_seeds)
