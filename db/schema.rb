@@ -10,15 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_08_161610) do
-  create_table "catalogs", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2023_06_08_183250) do
+  create_table "animes", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "genre"
     t.integer "episodes"
     t.integer "user_id"
-    t.index ["user_id"], name: "index_catalogs_on_user_id"
+    t.index ["user_id"], name: "index_animes_on_user_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "anime_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["anime_id"], name: "index_favorites_on_anime_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -28,5 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_08_161610) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "catalogs", "users"
+  add_foreign_key "animes", "users"
+  add_foreign_key "favorites", "animes"
+  add_foreign_key "favorites", "users"
 end

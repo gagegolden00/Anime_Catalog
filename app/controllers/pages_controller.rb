@@ -14,8 +14,8 @@ class PagesController < ApplicationController
   def set_random_titles
     # Retrieve a random title from the database
     @random_titles = []
-    @random_titles << Catalog.order("RANDOM()").limit(3).pluck(:title)
-    @convert_title_to_obj = @random_titles.map { |title| Catalog.find_by(title: title) }
+    @random_titles << Anime.order("RANDOM()").limit(3).pluck(:title)
+    @convert_title_to_obj = @random_titles.map { |title| Anime.find_by(title: title) }
   end
   # Because of the way Im grabbing the 3 random titles I created the @lister and these are
   # a bit different from the other controllers.

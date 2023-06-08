@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'about', to: "pages#about"
   
   ### CATALOGS ROUTES
-  resources :catalogs
+  resources :animes
   
   ### USERs ROUTES
   resources :users, only: [:new, :create, :show, :edit, :update]

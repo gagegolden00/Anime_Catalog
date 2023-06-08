@@ -1,5 +1,5 @@
 
-class CatalogsController < ApplicationController
+class AnimesController < ApplicationController
   before_action :set_title, only: [:show, :edit, :destroy, :update]
   before_action :set_user
   
@@ -7,23 +7,23 @@ class CatalogsController < ApplicationController
   end
   
   def index
-    @pagy, @catalogs = pagy(Catalog.all)
+    @pagy, @catalogs = pagy(Anime.all)
     
   end
   
   def new
-    @catalog = Catalog.new
+    @catalog = Anime.new
   end
   
   def create
-    @catalog = Catalog.new(catalog_params)
+    @catalog = Anime.new(catalog_params)
     @catalog.user = @user
     if @catalog.save
       redirect_to @catalog
       flash[:notice] = "Save Successful!"
     else
       flash[:notice] = "Save Failed =( "
-      redirect_to new_catalog_path
+      redirect_to new_anime_path
     end
   end
   
@@ -42,13 +42,13 @@ class CatalogsController < ApplicationController
   
   def destroy
     @catalog.destroy
-    redirect_to catalogs_path
+    redirect_to animes_path
   end
   
   private
   
   def set_title
-    @catalog = Catalog.find(params[:id])
+    @catalog = Anime.find(params[:id])
   end
   
   def catalog_params

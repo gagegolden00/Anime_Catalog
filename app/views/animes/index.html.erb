@@ -1,10 +1,10 @@
 <h1>INDEX PAGE</h1>
 <link rel="stylesheet" href="/assets/stylesheets/index.css">
 <% @catalogs.each do |title| %>
-  <%= link_to "#{title.title}", catalog_path(title), class: 'hover-link'%><br><br>
+  <%= link_to "#{title.title}", anime_path(title), class: 'hover-link'%><br><br>
 
-  <%= link_to "Edit", edit_catalog_path(title), class: 'hover-link' %>
-  <%= button_to "Destroy", catalog_path(title), method: :delete,
+  <%= link_to "Edit", edit_anime_path(title), class: 'hover-link' %>
+  <%= button_to "Destroy", anime_path(title), method: :delete,
                 data: {turbo_confirm: "Are You Sure you want to delete #{title.title}?"} %>
   <br><br>
 <% end %>

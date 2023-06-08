@@ -4,7 +4,7 @@
   <h1><%= @catalog.title %></h1>
   <h3>
     <% if @catalog.user == current_user %>
-      <%= link_to "EDIT #{@catalog.title}", edit_catalog_path(@catalog) %>
+      <%= link_to "EDIT #{@catalog.title}", edit_anime_path(@catalog) %>
     <%end %>
   </h3>
   <ul class="anime-list">

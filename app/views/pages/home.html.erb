@@ -9,9 +9,9 @@
     to catalog_path in the link_to helper.-->
     <% @random_titles.each do |nested_array| %>
       <% nested_array.each do |title_of| %>
-        <% catalog = Catalog.find_by(title: title_of) %>
+        <% catalog = Anime.find_by(title: title_of) %>
         <li>
-          <h2><%= link_to "#{title_of}", catalog_path(catalog)%></h2>
+          <h2><%= link_to "#{title_of}", anime_path(catalog)%></h2>
           <p>Genre: <%= @genre %></p>
           <p>Episodes: <%= @episodes %></p>
         </li>
