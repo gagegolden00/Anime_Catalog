@@ -1,10 +1,16 @@
 <h1>INDIVIDUAL TITLE's DYNAMIC SHOW</h1>
+
 <div class="container">
   <h1><%= @catalog.title %></h1>
+  <h3>
+    <% if @catalog.user == current_user %>
+      <%= link_to "EDIT #{@catalog.title}", edit_catalog_path(@catalog) %>
+    <%end %>
+  </h3>
   <ul class="anime-list">
     <li>Genre: <%= @catalog.genre %> <br><br>
       Episodes: <%= @catalog.episodes %><br><br>
-      Added by: <%=  @lister %></li>
+      Added by: <%=  @catalog.user.username %></li>
   </ul>
 </div>
 

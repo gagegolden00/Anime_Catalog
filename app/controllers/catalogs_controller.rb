@@ -1,7 +1,7 @@
 
 class CatalogsController < ApplicationController
   before_action :set_title, only: [:show, :edit, :destroy, :update]
-  before_action :set_user, :set_lister
+  before_action :set_user
   
   def show
   end
@@ -17,6 +17,7 @@ class CatalogsController < ApplicationController
   
   def create
     @catalog = Catalog.new(catalog_params)
+    @catalog.user = @user
     if @catalog.save
       redirect_to @catalog
       flash[:notice] = "Save Successful!"
@@ -51,15 +52,11 @@ class CatalogsController < ApplicationController
   end
   
   def catalog_params
-    params.require(:catalog).permit(:title, :genre, :episodes)
+    params.require(:catalog).permit(:title, :genre, :episodes, :user_id)
   end
   
   def set_user
     @user = User.find(session[:user_id]) if session[:user_id]
-  end
-  
-  def set_lister
-    @lister = @catalog.user.username
   end
   
 end

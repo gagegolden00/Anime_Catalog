@@ -1,20 +1,19 @@
 <!-- Dynamic link if / if not logged in -->
 <% if logged_in? %>
   <%= link_to 'SIGN OUT', logout_url, data: { turbo_method: :delete }, class: 'hover-link' %>
+  <%= link_to 'ADD NEW ENTRY', new_catalog_path, class: 'hover-link'%>
+  <%= link_to 'HOME', '/', class: 'hover-link'%>
+  <%= link_to 'INDEX', catalogs_path , class: 'hover-link'%>
+  <%= link_to 'ABOUT', '/about', class: 'hover-link'%>
+  <%= link_to 'USER HOME', user_path(@user), class: 'hover-link'%>
   <%= link_to 'EDIT YOUR PROFILE', edit_user_path(current_user), class: 'hover-link' %>
-  <%= link_to "ADD NEW ENTRY", new_catalog_path, class: 'hover-link'%>
-  <%= link_to "HOME", '/', class: 'hover-link'%>
-  <%= link_to "INDEX", catalogs_path , class: 'hover-link'%>
-  <%= link_to "ABOUT", '/about', class: 'hover-link'%>
-  <%= link_to "USER HOME", user_path(@user), class: 'hover-link'%>
-
   <h2>Logged in as <%= @user.username %></h2>
 <% else %>
-  <%= link_to "SIGN UP", new_user_path, class: 'hover-link'%>
-  <%= link_to "LOGIN", login_path, class: 'hover-link'%>
-  <%= link_to "HOME", '/', class: 'hover-link'%>
-  <%= link_to "INDEX", catalogs_path , class: 'hover-link'%>
-  <%= link_to "ABOUT", '/about', class: 'hover-link'%>
+  <%= link_to 'SIGN UP', new_user_path, class: 'hover-link'%>
+  <%= link_to 'LOGIN', login_path, class: 'hover-link'%>
+  <%= link_to 'HOME', '/', class: 'hover-link'%>
+  <%= link_to 'INDEX', catalogs_path , class: 'hover-link'%>
+  <%= link_to 'ABOUT', '/about', class: 'hover-link'%>
 <% end %>
 
 
