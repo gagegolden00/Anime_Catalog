@@ -1,6 +1,6 @@
 <h1>INDEX PAGE</h1>
 <link rel="stylesheet" href="/assets/stylesheets/index.css">
-<% @animes.each do |title| %>
+<% @anime_index.each do |title| %>
   <%= link_to "#{title.title}", anime_path(title), class: 'hover-link'%><br><br>
   <br><br>
 <% end %>

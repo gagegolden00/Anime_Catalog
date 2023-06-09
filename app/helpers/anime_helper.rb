@@ -1,3 +1,3 @@
-module AnimesHelper
+module AnimeHelper
 
 end

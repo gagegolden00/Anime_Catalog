@@ -1,4 +1,4 @@
-class AnimesController < ApplicationController
+class AnimeController < ApplicationController
   before_action :set_title, only: [:show, :edit, :destroy, :update]
   before_action :set_user
   before_action :require_user, except: [:show, :index]
@@ -6,7 +6,7 @@ class AnimesController < ApplicationController
   def show
   end
   def index
-    @pagy, @animes = pagy(Anime.all)
+    @pagy, @anime_index = pagy(Anime.all)
   end
   def new
     @anime = Anime.new

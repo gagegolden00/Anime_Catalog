@@ -3,8 +3,8 @@
   <%= link_to 'SIGN OUT', logout_url, data: { turbo_method: :delete }, class: 'hover-link' %>
   <%= link_to 'ADD NEW ENTRY', new_anime_path, class: 'hover-link'%>
   <%= link_to 'HOME',root_path, class: 'hover-link'%>
-  <%= link_to 'INDEX', animes_path , class: 'hover-link'%>
-  <%= link_to 'ABOUT', '/about', class: 'hover-link'%>
+  <%= link_to 'INDEX', anime_index_path , class: 'hover-link'%>
+  <%= link_to 'ABOUT', about_path, class: 'hover-link'%>
   <%= link_to 'USER HOME', user_path(current_user), class: 'hover-link'%>
   <%= link_to 'EDIT YOUR PROFILE', edit_user_path(current_user), class: 'hover-link' %>
   <h2>Logged in as <%= current_user.username %></h2>
@@ -12,8 +12,8 @@
   <%= link_to 'SIGN UP', new_user_path, class: 'hover-link'%>
   <%= link_to 'SIGN IN', login_path, class: 'hover-link'%>
   <%= link_to 'HOME', root_path, class: 'hover-link'%>
-  <%= link_to 'INDEX', animes_path , class: 'hover-link'%>
-  <%= link_to 'ABOUT', '/about', class: 'hover-link'%>
+  <%= link_to 'INDEX', anime_index_path , class: 'hover-link'%>
+  <%= link_to 'ABOUT', about_path, class: 'hover-link'%>
 <% end %>
 
 
