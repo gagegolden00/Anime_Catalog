@@ -9,19 +9,16 @@ class UsersController < ApplicationController
   end
   
   def create
+    # can use an if else to display password mismatch error but
+    # that is not the way this is done so will work on this later. turbo-frames issue.
     @user = User.new(user_params)
-    if @user.password == @user.password_confirmation
-      if @user.save
-        flash[:notice] = "You have successfully signed up, #{@user.username}!"
-        # creates the session once a user has signed up
-        session[:user_id] = @user.id
-        redirect_to root_path
-      else
-        flash[:notice] = 'problem signing up'
-        redirect_to '/users/new'
-      end
+    if @user.save
+      flash[:notice] = "You have successfully signed up, #{@user.username}!"
+      # creates the session once a user has signed up
+      session[:user_id] = @user.id
+      redirect_to root_path
     else
-      flash[:notice] = "passwords dont match"
+      flash[:notice] = 'problem signing up'
       redirect_to '/users/new'
     end
   end

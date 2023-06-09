@@ -1,9 +1,14 @@
+<!-- Displaying this with render won't work because of turbo frames, will figure this out later -->
+<!-- for now flash messages will do -->
+
 
 <% if object.errors.any? %>
-  <h2>The following errors </h2>
-  <ul>
-    <% object.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
+  <div id="error_explanation">
+    <h2>The following errors occurred:</h2>
+    <ul>
+      <% object.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
