@@ -10,13 +10,21 @@ class FavoritesController < ApplicationController
     
     @favorite = Favorite.new(user: @user, anime: @anime)
     if @favorite.save
-      flash[:notice] = "Added to favorites"
+      flash.now[:notice] = "Added to favorites"
       # redirect maybe?
     else
-      flash[:notice] = "Something went wrong. Try again"
+      flash.now[:notice] = "Something went wrong. Try again"
       #redirect or re render ?
     end
-    
   end
   
+  def destroy
+    set_favorite
+    @favorite.destroy
+  end
+  
+  private
+  def set_favorite
+    @favorite = Favorite.find(params[:id])
+  end
 end
