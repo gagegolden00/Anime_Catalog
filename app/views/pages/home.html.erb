@@ -11,7 +11,7 @@
       <% nested_array.each do |title_of| %>
         <% catalog = Anime.find_by(title: title_of) %>
         <li>
-          <h2><%= link_to "#{title_of}", anime_path(catalog)%></h2>
+          <h2><%= link_to "#{title_of}", anime_path(catalog), class: 'hover-link'%></h2>
           <p>Genre: <%= @genre %></p>
           <p>Episodes: <%= @episodes %></p>
         </li>

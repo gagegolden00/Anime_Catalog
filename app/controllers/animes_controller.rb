@@ -1,6 +1,8 @@
 class AnimesController < ApplicationController
   before_action :set_title, only: [:show, :edit, :destroy, :update]
   before_action :set_user
+  before_action :require_user, except: [:show, :index]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
   def show
   end
   def index
@@ -37,9 +39,10 @@ class AnimesController < ApplicationController
       @anime.destroy
       flash[:notice] = "Anime successfully deleted!"
     else
-      flash[:notice] = "You are not authorized to delete this anime."
+      flash[:notice] = "Deletion failed."
     end
-    redirect_to animes_path
+    # home or user home ??
+    redirect_to root_path
   end
   
   private
@@ -52,6 +55,12 @@ class AnimesController < ApplicationController
   end
   def set_user
     @user = User.find(session[:user_id]) if session[:user_id]
+  end
+  def require_same_user
+    if current_user != @anime.user
+      flash[:notice] = 'You can only edit or delete an anime that you have added.'
+      redirect_to @anime
+    end
   end
   
 end

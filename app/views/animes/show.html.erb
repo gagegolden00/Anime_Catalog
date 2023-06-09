@@ -1,11 +1,11 @@
-<h1>INDIVIDUAL TITLE's DYNAMIC SHOW</h1>
+<h1>TITLE'S DYNAMIC SHOW</h1>
 
 <div class="container">
   <h1><%= @anime.title %></h1>
   <h3>
     <% if @anime.user == current_user %>
-      <%= link_to "EDIT #{@anime.title}", edit_anime_path(@anime) %>
-      <%= button_to "Destroy", anime_path(@anime), method: :delete,
+      <%= link_to "EDIT #{@anime.title}", edit_anime_path(@anime), class: 'hover-link' %>
+      <%= button_to "Delete from Database", anime_path(@anime), method: :delete,
                     data: {turbo_confirm: "Are You Sure you want to delete #{@anime.title}?"} %>
     <%end %>
     <% if logged_in? %>
