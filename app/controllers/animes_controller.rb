@@ -41,9 +41,16 @@ class AnimesController < ApplicationController
   end
   
   def destroy
-    @anime.destroy
+    if @anime.user == current_user
+      @anime.favorites.destroy_all
+      @anime.destroy
+      flash[:notice] = "Anime successfully deleted!"
+    else
+      flash[:notice] = "You are not authorized to delete this anime."
+    end
     redirect_to animes_path
   end
+
   
   private
   

@@ -13,7 +13,7 @@ class FavoritesController < ApplicationController
       redirect_to @anime
     else
       redirect_to @anime
-      flash[:notice] = "Something went wrong. Try again"
+      flash[:notice] = "Already added to favorites"
     end
   end
   

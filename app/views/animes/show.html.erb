@@ -5,6 +5,8 @@
   <h3>
     <% if @anime.user == current_user %>
       <%= link_to "EDIT #{@anime.title}", edit_anime_path(@anime) %>
+      <%= button_to "Destroy", anime_path(@anime), method: :delete,
+                    data: {turbo_confirm: "Are You Sure you want to delete #{@anime.title}?"} %>
     <%end %>
     <% if logged_in? %>
       <%= button_to "Add to Favorites", favorites_path(anime_id: @anime.id, user_id: @user.id), method: :post %>

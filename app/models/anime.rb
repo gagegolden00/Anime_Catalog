@@ -1,6 +1,6 @@
 class Anime < ApplicationRecord
   belongs_to :user
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
   
   validates :title, presence: true, length: { minimum: 1, maximum: 100 }
   validates :genre, presence: true, length: { minimum: 1, maximum: 50 }

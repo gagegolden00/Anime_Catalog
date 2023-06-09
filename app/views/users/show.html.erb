@@ -5,9 +5,12 @@
   <h2>Favorites</h2>
   <% @user.favorites.each do |favorite| %>
     <ul>
-      <li><%= favorite.anime.title %></li>
-      <%= button_to "Destroy", favorite_url(favorite), method: :delete,
-                    data: {turbo_confirm: "Are You Sure you want to delete #{favorite}?"} %>
+      <li><%= link_to "#{favorite.anime.title}", anime_path(favorite.anime), class: 'hover-link'%></li>
+      <br>
+      <%= button_to "Remove from favorites", favorite_url(favorite), method: :delete,
+                    data: {turbo_confirm: "Are You Sure you want to delete #{favorite}?"} %> <br> <br>
+
+
     </ul>
   <% end %>
 
