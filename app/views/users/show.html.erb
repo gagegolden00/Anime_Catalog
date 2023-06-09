@@ -1,6 +1,4 @@
 <h1>User Home Page</h1>
-
-
 <div>
   <h2>Favorites</h2>
   <% @user.favorites.each do |favorite| %>
@@ -9,8 +7,6 @@
       <br>
       <%= button_to "Remove from favorites", favorite_url(favorite), method: :delete,
                     data: {turbo_confirm: "Are You Sure you want to delete #{favorite}?"} %> <br> <br>
-
-
     </ul>
   <% end %>
 

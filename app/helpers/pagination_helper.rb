@@ -1,4 +1,3 @@
-
 module PaginationHelper
   require 'pagy/extras/overflow'
   include Pagy::Frontend

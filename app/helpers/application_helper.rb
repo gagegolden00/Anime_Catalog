@@ -1,5 +1,4 @@
 module ApplicationHelper
-  
   ## User session DRY
   # current user
   def current_user
