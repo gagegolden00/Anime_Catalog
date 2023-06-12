@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Anime_Catalog_development@localhost" uuid="015a4700-920b-404c-bc92-e04809429c70">
+    <data-source source="LOCAL" name="anime_catalog_development@localhost" uuid="d89df122-a88e-408f-b482-37490f945dd2">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/Anime_Catalog_development</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/anime_catalog_development</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
