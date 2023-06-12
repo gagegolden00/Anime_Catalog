@@ -9,8 +9,8 @@ gem "rails", "~> 7.0.5"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+# Use postgresql as the database for Active Record
+gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -71,11 +71,8 @@ group :test do
   gem "webdrivers"
 end
 
-# debugger
-gem 'pry'
+# Pagination gem
+gem 'pagy'
 
-# Pagination
-gem 'pagy', '~> 6.0', '>= 6.0.4'
-
-# Security Gems
-gem 'bcrypt', '~> 3.1', '>= 3.1.18'
+# authentication gem
+gem 'bcrypt'
