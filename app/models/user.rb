@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :anime, dependent: :destroy
+  has_many :anime
   has_many :favorites, dependent: :destroy
   has_secure_password
   #validation

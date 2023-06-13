@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   resources :anime
   
   ### USERs ROUTES
-  resources :users, only: [:new, :create, :show, :edit, :update]
+  resources :users, only: [:new, :create, :show, :edit, :update, :destroy]
+  get 'users/:id/confirm-profile-delete', to: 'users#confirm_profile_delete', as: :confirm_profile_delete
   
   ### Session routes for user sessions
   get '/login', to: 'sessions#login', as: :login

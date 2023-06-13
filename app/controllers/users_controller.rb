@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: [:edit, :update, :show]
-  before_action :require_same_user, only: [:show, :create, :update, :edit]
+  before_action :find_user, only: [:edit, :update, :show, :destroy]
+  before_action :require_same_user, only: [:show, :create, :update, :edit, :destroy]
   def show
   end
   def new
@@ -28,6 +28,22 @@ class UsersController < ApplicationController
     else
       redirect_to edit_user_path(@user), notice: "Error editing"
     end
+  end
+  
+  def destroy
+    if User.exists?(1)
+      Anime.where(user_id: @user.id).update_all(user_id: 1)
+      @user.favorites.destroy_all
+      @user.destroy
+      session.destroy
+      flash[:notice] = "Account successfully deleted"
+      redirect_to root_path
+    else
+      flash[:notice] = "There was a problem with re-assigning the ids"
+    end
+  end
+  
+  def confirm_profile_delete
   end
 
   private

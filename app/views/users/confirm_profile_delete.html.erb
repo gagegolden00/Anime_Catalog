@@ -1,0 +1,10 @@
+<%= stylesheet_link_tag 'confirm_profile_delete.css' %>
+
+<h1>CONFIRM PROFILE DELETE PAGE</h1>
+
+
+<h2>Press the big red button to delete your profile</h2>
+
+<%= button_to "DELETE YOUR ACCOUNT",user_path(current_user) , method: :delete,
+              data: {turbo_confirm: "Are you sure you want to delete your account?"},
+              class: "big-red-button center" %>

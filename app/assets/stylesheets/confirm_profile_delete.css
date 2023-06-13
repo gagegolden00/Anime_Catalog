@@ -1,0 +1,13 @@
+.big-red-button {
+    font-size: 24px;
+    color: white;
+    background-color: red;
+    padding: 15px 30px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh; /* Adjust this to center the button vertically within the viewport */
+}

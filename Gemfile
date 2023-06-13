@@ -76,3 +76,6 @@ gem 'pagy'
 
 # authentication gem
 gem 'bcrypt'
+
+# degugging
+gem 'pry'
