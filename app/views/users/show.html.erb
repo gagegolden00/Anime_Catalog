@@ -6,7 +6,8 @@
       <li><%= link_to "#{favorite.anime.title}", anime_path(favorite.anime), class: 'hover-link'%></li>
       <br>
       <%= button_to "Remove from favorites", favorite_url(favorite), method: :delete,
-                    data: {turbo_confirm: "Are You Sure you want to delete #{favorite}?"} %> <br> <br>
+                    data: {turbo_confirm: "Are you sure you want to delete #{favorite}?"} %>
+      <br> <br>
     </ul>
   <% end %>
 

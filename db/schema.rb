@@ -10,37 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_12_151621) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_12_234856) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "anime", id: :bigint, default: -> { "nextval('all_anime_id_seq'::regclass)" }, force: :cascade do |t|
-    t.string "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "genre"
+  create_table "anime", id: :serial, force: :cascade do |t|
+    t.string "title", limit: 150, null: false
+    t.string "genre", limit: 75, null: false
     t.integer "episodes"
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_all_anime_on_user_id"
+    t.datetime "created_at", precision: nil, default: -> { "now()" }
+    t.datetime "updated_at", precision: nil, default: -> { "now()" }
+    t.integer "user_id"
+    t.check_constraint "episodes >= 1 AND episodes <= 2000", name: "anime_episodes_check"
   end
 
-  create_table "favorites", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "anime_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["anime_id"], name: "index_favorites_on_anime_id"
-    t.index ["user_id"], name: "index_favorites_on_user_id"
+  create_table "favorites", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "anime_id", null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "users", id: :serial, force: :cascade do |t|
+    t.string "username", limit: 200, null: false
+    t.string "password_digest", limit: 255, null: false
+    t.datetime "created_at", default: "2023-06-12 23:50:20", null: false
+    t.datetime "updated_at", default: "2023-06-12 23:50:20", null: false
   end
 
-  add_foreign_key "anime", "users"
-  add_foreign_key "favorites", "anime"
-  add_foreign_key "favorites", "users"
+  add_foreign_key "anime", "users", name: "anime_user_id_fkey"
+  add_foreign_key "favorites", "anime", name: "favorites_anime_id_fkey"
+  add_foreign_key "favorites", "users", name: "favorites_user_id_fkey"
 end
