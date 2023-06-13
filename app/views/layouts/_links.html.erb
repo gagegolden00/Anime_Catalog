@@ -7,7 +7,7 @@
   <%= link_to 'ABOUT', about_path, class: 'hover-link'%>
   <%= link_to 'USER HOME', user_path(current_user), class: 'hover-link'%>
   <%= link_to 'EDIT YOUR PROFILE', edit_user_path(current_user), class: 'hover-link' %>
-  <%= link_to 'DELETE PROFILE',  confirm_profile_delete_path(current_user)%>
+  <%= link_to 'DELETE PROFILE',  confirm_profile_delete_path(current_user), class: 'hover-link'%>
   <h2>Logged in as <%= current_user.username %></h2>
 <% else %>
   <%= link_to 'SIGN UP', new_user_path, class: 'hover-link'%>
