@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :edit, :update, :destroy]
   get 'users/:id/confirm-profile-delete', to: 'users#confirm_profile_delete', as: :confirm_profile_delete
   
+  # PASSWORD RESETS ROUTES
+  resources :password_resets, only: [:new, :create, :edit, :update, :destroy]
+  
   ### Session routes for user sessions
   get '/login', to: 'sessions#login', as: :login
   post '/login', to: 'sessions#create'

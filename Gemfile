@@ -75,7 +75,8 @@ end
 gem 'pagy'
 
 # authentication gem
-gem 'bcrypt'
+#gem 'bcrypt'
+gem 'devise'
 
 # degugging
 gem 'pry'
